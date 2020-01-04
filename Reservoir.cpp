@@ -14,8 +14,8 @@ public:
 	Reservoir(int c){
 		etat = true;
 		//capacite = c;
-		primaire = new Pompe(1);
-		secondaire = new Pompe(0);
+		primaire = Pompe(1);
+		secondaire = Pompe(0);
 	}
 	
 		//permet de vider le reservoir
@@ -28,10 +28,20 @@ public:
 		return etat;
 	}
 	
-	int get_etat_pompe(){
+		//retourne l'etat de la pompe primaire
+	int get_etat_pompe_primaire(){
+		return primaire.getEtatPompe;
+	}
+	
+		//retourne l'etat de la pompe secondaire
+	int get_etat_pompe_secondaire(){
+		return secondaire.getEtatPompe;
 	}
 	
 		// destructeur de la classe Reservoir
-	~Reservoir(){}
+	~Reservoir(){
+		delete[] primaire;
+		delete[] secondaire;
+	}
 	
 };

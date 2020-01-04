@@ -10,6 +10,7 @@ class Moteur{
 private:
 	
 	Reservoir *origine;
+	int chemin; //1 si pompe primaire d'origine, 0 si pompe secondaire
 
 public:
 
@@ -18,6 +19,8 @@ public:
 	
 		//changement du reservoir d'origine
 	void set_reservoir(Reservoir &res);
+	
+	void set_chemin();
 	
 		//alimentation du moteur
 	void alimentation();

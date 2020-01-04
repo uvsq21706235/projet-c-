@@ -1,13 +1,14 @@
-#ifndef _MOTEUR_H
-#define _MOTEUR_H
+#ifndef _VANNE_H
+#define _VANNE_H
 
 #include <iostream>
 using namespace std;
 
 class Vanne{
+	friend class Reservoir;
 	
 private:
-		// etat égal à 1 si la vanne est ouverte, à 0 si la vanne est fermée,
+		// etat égal à 1 si la vanne est fermée, à 0 si la vanne est ouverte,
 	int etat;
 
 public:
@@ -16,7 +17,9 @@ public:
 	Vanne();
 	
 		// permet d'ouvrir et de fermer la vanne
-	power();
+	void power();
+	
+		
 	
 		// destructeur de la classe Vanne
 		

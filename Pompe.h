@@ -1,10 +1,11 @@
-#ifndef _MOTEUR_H
-#define _MOTEUR_H
+#ifndef _POMPE_H
+#define _POMPE_H
 
 #include <iostream>
 using namespace std;
 
 class Pompe{
+	friend class Reservoir;
 	
 private:
 		
@@ -14,13 +15,13 @@ private:
 public:
 
 		//constructeur de la classe pompe qui prend en argument l'état initial de la pompe
-	Pompe(int e);
+	Pompe(int e=0);
 	
 		//permet d'activer ou de desactiver la pompe
-	power();
+	void power();
 	
 		//permet de déclancher une panne
-	panne();
+	void panne();
 	
 		//destructeur de la classe Pompe
 	~Pompe();
